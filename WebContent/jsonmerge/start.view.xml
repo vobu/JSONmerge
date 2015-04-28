@@ -1,0 +1,21 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="jsonmerge.start" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="merging JSON models">
+		<content>
+			<HBox>
+				<List headerText="Employees"
+					  busyIndicatorDelay="0"
+					  items="{ path: '/d/results', sorter: {path: 'LastName'} }">
+					<items>
+						<StandardListItem title="{LocalID} {TitleOfCourtesy} {LastName} {FirstName} ({Title})" />
+					</items>
+				</List>
+				<VBox alignItems="End">
+					<Button text="merge remote" press="mergeRemote" />
+					<Button text="merge local" press="mergeLocal" />
+                    <Button text="reset" press="mergeReset" />
+                </VBox>
+			</HBox>
+		</content>
+	</Page>
+</core:View>
